@@ -5,6 +5,7 @@
   "type": "module",
   "main": "electron/main.mjs",
   "description": "A private AI agent for macOS and Linux that runs LFM3 1.7B and LFM3 Omni 2B locally, with a web UI.",
+  "author": "Liquid Agent contributors",
   "license": "MIT",
   "engines": {
     "node": ">=22"

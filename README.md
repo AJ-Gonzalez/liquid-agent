@@ -126,8 +126,9 @@ A theme is one palette with a light and a dark version, and all of it is data in
 - `knownFailures` names WCAG pairs a palette may miss, as `mode:foreground:background`. Everything else must pass.
 - `npm run themes:check` validates the file, keeps the built-in palette equal to `styles.css`, and prints every pair: 7:1 for body text, 4.5:1 for other text, 3:1 for accent fills.
 - Light mode misses AA today on the muted grey and the status colours (lowest: warning text at 2.39:1 on white). They are listed in `knownFailures` rather than quietly fixed, so the numbers stay honest; new palettes start with an empty list and must pass.
-- Settings → General → Palette switches between them. The choice is saved with the other settings, and the server only accepts ids that are in the file.
+- Settings → General → Palette is a dropdown over that file. The choice is saved with the other settings, and the server only accepts ids that are in the file.
 - **Lavender** is built from `#8e9aaf`, `#cbc0d3`, `#efd3d7`, `#feeafa` and `#dee2ff`. Every pair passes in both modes (lowest: muted text on the frame at 4.94:1); its dark version is a deep violet frame rather than a grey one.
+- **Ocean Blues** is built from `#00072d`, `#001c55`, `#0a2472`, `#0e6ba8` and `#a6e1fa`: prussian-navy dark mode, icy light mode, cornflower accent. Every pair passes (lowest: muted text on the frame at 5.19:1).
 
 ## License
 

@@ -1,0 +1,60 @@
+name: Desktop app
+
+on:
+  push:
+    branches: [main]
+    paths: &paths
+      - "electron/**"
+      - "themes/**"
+      - "web/src/theme.ts"
+      - "web/src/desktop.ts"
+      - "web/src/App.tsx"
+      - "web/src/styles.css"
+      - "scripts/package.mjs"
+      - "scripts/themes.mjs"
+      - ".github/workflows/electron.yml"
+      - "package.json"
+      - "package-lock.json"
+  pull_request:
+    paths: *paths
+  workflow_dispatch:
+
+jobs:
+  package:
+    name: ${{ matrix.platform }} ${{ matrix.arch }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-14
+            platform: darwin
+            arch: arm64
+          - os: ubuntu-22.04
+            platform: linux
+            arch: x64
+          - os: windows-2022
+            platform: win32
+            arch: x64
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Check the theme contract
+        run: npm run themes:check
+
+      - name: Build and pack
+        shell: bash
+        run: npm run app:package -- --platform=${{ matrix.platform }} --arch=${{ matrix.arch }}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: liquid-agent-${{ matrix.platform }}-${{ matrix.arch }}
+          path: release-electron/**/*
+          if-no-files-found: error

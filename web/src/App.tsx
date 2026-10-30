@@ -9,16 +9,29 @@ import { Logo, Sidebar } from "./components/Sidebar";
 import { Spinner } from "./components/ui";
 import { VoiceView } from "./components/VoiceView";
 import { connect, go, useStore } from "./store";
+import { setDesktopTheme } from "./desktop";
+import { BUILTIN, applyPalette, paletteFor, resolveMode, type ThemeSource } from "./theme";
+
+type ThemeSettings = { theme?: ThemeSource; palette?: string };
 
 function useTheme() {
-  const theme = useStore((s) => s.settings?.theme ?? "system");
+  const settings = useStore((s) => s.settings as ThemeSettings | undefined);
+  const source = settings?.theme ?? "system";
+  const palette = settings?.palette ?? BUILTIN;
   useEffect(() => {
     const dark = matchMedia("(prefers-color-scheme: dark)");
-    const apply = () => (document.documentElement.dataset.theme = theme === "system" ? (dark.matches ? "dark" : "light") : theme);
+    const apply = () => {
+      const mode = resolveMode(source, dark.matches);
+      const root = document.documentElement;
+      root.dataset.theme = mode;
+      root.dataset.palette = palette;
+      applyPalette(root, paletteFor(palette)[mode]);
+      setDesktopTheme(source, getComputedStyle(root).getPropertyValue("--app-bg").trim());
+    };
     apply();
     dark.addEventListener("change", apply);
     return () => dark.removeEventListener("change", apply);
-  }, [theme]);
+  }, [source, palette]);
 }
 
 function useShortcuts() {

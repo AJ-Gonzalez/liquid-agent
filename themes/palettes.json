@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "builtin": "liquid",
+  "palettes": {
+    "liquid": {
+      "name": "Liquid",
+      "light": {
+        "--app-bg": "#f3f3f4",
+        "--bg": "#ffffff",
+        "--panel": "#fafafa",
+        "--fg": "#1a1c1f",
+        "--fg-2": "#565a61",
+        "--fg-3": "#8b8f96",
+        "--border": "#e8e8eb",
+        "--border-strong": "#d9dadd",
+        "--hover": "rgba(15, 18, 24, 0.045)",
+        "--hover-strong": "rgba(15, 18, 24, 0.075)",
+        "--active": "rgba(15, 18, 24, 0.07)",
+        "--bubble": "#f2f2f4",
+        "--accent": "#339cff",
+        "--accent-text": "#0a7ae6",
+        "--accent-soft": "rgba(51, 156, 255, 0.12)",
+        "--danger": "#e5484d",
+        "--danger-soft": "rgba(229, 72, 77, 0.1)",
+        "--ok": "#22a45d",
+        "--warn": "#e8960c",
+        "--warn-soft": "rgba(245, 165, 36, 0.14)",
+        "--code-bg": "#f6f7f9",
+        "--code-head": "#eff0f3",
+        "--seg": "#ffffff"
+      },
+      "dark": {
+        "--app-bg": "#0a0a0b",
+        "--bg": "#121213",
+        "--panel": "#161618",
+        "--fg": "#fcfcfc",
+        "--fg-2": "#b6b8bd",
+        "--fg-3": "#7d8087",
+        "--border": "#232427",
+        "--border-strong": "#303136",
+        "--hover": "rgba(255, 255, 255, 0.05)",
+        "--hover-strong": "rgba(255, 255, 255, 0.085)",
+        "--active": "rgba(255, 255, 255, 0.08)",
+        "--bubble": "#232427",
+        "--accent": "#0169cc",
+        "--accent-text": "#55a8ff",
+        "--accent-soft": "rgba(51, 156, 255, 0.16)",
+        "--danger": "#ff6369",
+        "--danger-soft": "rgba(255, 99, 105, 0.12)",
+        "--ok": "#3dd68c",
+        "--warn": "#ffb224",
+        "--warn-soft": "rgba(255, 178, 36, 0.14)",
+        "--code-bg": "#18191b",
+        "--code-head": "#1e1f22",
+        "--seg": "#2a2b2f"
+      },
+      "knownFailures": [
+        "light:fg-3:bg",
+        "light:fg-3:panel",
+        "light:fg-3:app-bg",
+        "light:accent-text:bg",
+        "light:accent-text:panel",
+        "light:danger:bg",
+        "light:danger:panel",
+        "light:ok:bg",
+        "light:ok:panel",
+        "light:warn:bg",
+        "light:warn:panel",
+        "light:accent:bg"
+      ]
+    }
+  }
+}

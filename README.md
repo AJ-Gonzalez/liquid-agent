@@ -131,6 +131,7 @@ A theme is one palette with a light and a dark version, and all of it is data in
 - **Ocean Blues** is built from `#00072d`, `#001c55`, `#0a2472`, `#0e6ba8` and `#a6e1fa`: prussian-navy dark mode, icy light mode, cornflower accent. Every pair passes (lowest: muted text on the frame at 5.19:1).
 - **Romantic** is built from `#ef798a`, `#f7a9a8`, `#7d82b8`, `#613f75` and `#e5c3d1`: plum-velvet dark mode, blush light mode, rose accent. Every pair passes (lowest: muted text on the frame at 5.24:1).
 - **Blue Industrial** is built from `#dcdcdd`, `#c5c3c6`, `#46494c`, `#4c5c68` and `#1985a1`: iron-grey dark mode, alabaster light mode, pacific-cyan accent. Every pair passes (lowest: muted text on the frame at 5.09:1).
+- **Dusk** is built from a Color Hunt palette (`#202940`, `#4b4038`, `#9a8678`, `#caaa98`): navy-and-beige dark mode, warm alabaster light mode, taupe accent. Every pair passes (lowest: muted text on the frame at 5.04:1).
 
 ## License
 

@@ -90,6 +90,44 @@ npm run typecheck
 npm test           # starts the server and checks its API
 ```
 
+## Desktop app
+
+The same page in its own window, without a browser tab:
+
+```bash
+npm run app                                              # build the UI, then open the window
+npm run app:package -- --platform=darwin --arch=arm64    # or linux / win32
+```
+
+The window starts the same local server the browser version uses and loads `http://127.0.0.1:8170`, so there is one UI, one API and one token, and the page still works if you open it in a browser. Quitting stops the server; if a `liquid-agent` server is already running, the window reuses it instead of starting a second one. `scripts/package.mjs` writes an unsigned bundle to `release-electron/`.
+
+`electron/main.mjs` is the whole shell: it picks a port, runs `server/index.js` as a child process, keeps Node out of the page (one small preload, external links open in your browser), and keeps the window background and native controls in the same theme as the page. The page runs on Windows, but the AI engine does not: `server/backends.js` only downloads llama.cpp builds for macOS and Linux.
+
+### Themes
+
+A theme is one palette with a light and a dark version, and all of it is data in `themes/palettes.json`. The two `:root` blocks in `web/src/styles.css` hold the built-in values so the first paint is right before JavaScript runs.
+
+```json
+{
+  "version": 1,
+  "builtin": "liquid",
+  "palettes": {
+    "liquid": {
+      "name": "Liquid",
+      "light": { "--bg": "#ffffff", "--fg": "#1a1c1f", "…": "…" },
+      "dark": { "--bg": "#121213", "--fg": "#fcfcfc", "…": "…" },
+      "knownFailures": ["light:warn:bg"]
+    }
+  }
+}
+```
+
+- Every palette defines every colour token for both modes. `--mono`, `--shadow` and `--shadow-lg` are not colours and stay in CSS.
+- `knownFailures` names WCAG pairs a palette may miss, as `mode:foreground:background`. Everything else must pass.
+- `npm run themes:check` validates the file, keeps the built-in palette equal to `styles.css`, and prints every pair: 7:1 for body text, 4.5:1 for other text, 3:1 for accent fills.
+- Light mode misses AA today on the muted grey and the status colours (lowest: warning text at 2.39:1 on white). They are listed in `knownFailures` rather than quietly fixed, so the numbers stay honest; new palettes start with an empty list and must pass.
+- The page reads `settings.palette` already and falls back to `liquid`. Picking one needs a `palette` key in `server/core.js` DEFAULTS and a control in Settings, which comes with the first new palette.
+
 ## License
 
 MIT

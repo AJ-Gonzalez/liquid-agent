@@ -227,6 +227,59 @@
         "--code-head": "#251730",
         "--seg": "#3b2844"
       }
+    },
+    "blue-industrial": {
+      "name": "Blue Industrial",
+      "light": {
+        "--app-bg": "#e5e6e7",
+        "--bg": "#fbfbfc",
+        "--panel": "#f4f5f6",
+        "--fg": "#46494c",
+        "--fg-2": "#4c5c68",
+        "--fg-3": "#5a6066",
+        "--border": "#dcdddf",
+        "--border-strong": "#c5c3c6",
+        "--hover": "rgba(70, 73, 76, 0.05)",
+        "--hover-strong": "rgba(70, 73, 76, 0.08)",
+        "--active": "rgba(70, 73, 76, 0.07)",
+        "--bubble": "#e9ebec",
+        "--accent": "#1985a1",
+        "--accent-text": "#12708a",
+        "--accent-soft": "rgba(25, 133, 161, 0.13)",
+        "--danger": "#a8243a",
+        "--danger-soft": "rgba(168, 36, 58, 0.11)",
+        "--ok": "#1f6f52",
+        "--warn": "#8a5518",
+        "--warn-soft": "rgba(138, 85, 24, 0.12)",
+        "--code-bg": "#f3f5f6",
+        "--code-head": "#eaedee",
+        "--seg": "#ffffff"
+      },
+      "dark": {
+        "--app-bg": "#24272a",
+        "--bg": "#2b2f33",
+        "--panel": "#33383c",
+        "--fg": "#eef0f1",
+        "--fg-2": "#c2c8cc",
+        "--fg-3": "#a5aeb4",
+        "--border": "#3d4247",
+        "--border-strong": "#4c5359",
+        "--hover": "rgba(238, 240, 241, 0.06)",
+        "--hover-strong": "rgba(238, 240, 241, 0.1)",
+        "--active": "rgba(238, 240, 241, 0.09)",
+        "--bubble": "#3a4045",
+        "--accent": "#2ea3c1",
+        "--accent-text": "#8ad4e8",
+        "--accent-soft": "rgba(46, 163, 193, 0.18)",
+        "--danger": "#ff8f9e",
+        "--danger-soft": "rgba(255, 143, 158, 0.14)",
+        "--ok": "#6fd3a6",
+        "--warn": "#ffc46b",
+        "--warn-soft": "rgba(255, 196, 107, 0.16)",
+        "--code-bg": "#262a2e",
+        "--code-head": "#2f3439",
+        "--seg": "#3d4247"
+      }
     }
   }
 }

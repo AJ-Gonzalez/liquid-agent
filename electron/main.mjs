@@ -28,6 +28,16 @@ let serverLog = [];
 app.setName("Liquid Agent");
 if (process.platform === "win32") app.setAppUserModelId("app.liquid-agent");
 
+// Electron dies on SIGTERM/SIGINT without running a normal quit, which would
+// leave its server running, so ask it to quit properly and make sure a child
+// that outlives us is stopped anyway.
+for (const signal of ["SIGINT", "SIGTERM", "SIGHUP"]) process.on(signal, () => app.quit());
+process.on("exit", () => {
+  try {
+    child?.kill("SIGTERM");
+  } catch {}
+});
+
 // One window per user: a second launch focuses the first instead of starting a
 // second server and fighting over the model ports.
 if (!app.requestSingleInstanceLock()) {

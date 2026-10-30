@@ -89,6 +89,8 @@ export type Settings = {
   omniURL: string;
   guardianURL: string;
   browserURL: string;
+  /** Palette id from themes/palettes.json. */
+  palette: string;
 };
 
 export type Idea = { title: string; prompt: string };

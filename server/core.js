@@ -103,6 +103,7 @@ export const DEFAULTS = {
   omniURL: "http://127.0.0.1:8181/v1",
   guardianURL: "http://127.0.0.1:8766",
   browserURL: "http://127.0.0.1:8767",
+  palette: "liquid",
 };
 
 const URL_KEYS = new Set(["smallURL", "omniURL", "guardianURL", "browserURL"]);
@@ -124,12 +125,23 @@ export const QUANTS = {
   ],
 };
 
+/** Palettes on offer, read from the theme registry so the two can't drift. */
+const PALETTE_IDS = (() => {
+  try {
+    const registry = JSON.parse(fs.readFileSync(path.join(ROOT, "themes", "palettes.json"), "utf8"));
+    return Object.keys(registry.palettes);
+  } catch {
+    return ["liquid"];
+  }
+})();
+
 const CHOICES = {
   smallQuant: QUANTS.small.map((q) => q.id),
   omniQuant: QUANTS.omni.map((q) => q.id),
   personality: Object.keys(PERSONALITIES),
   approvalMode: ["askAlways", "approveForMe", "fullAuto"],
   theme: ["system", "light", "dark"],
+  palette: PALETTE_IDS,
   voice: ["female", "male"],
 };
 

@@ -68,6 +68,59 @@
         "light:warn:panel",
         "light:accent:bg"
       ]
+    },
+    "lavender": {
+      "name": "Lavender",
+      "light": {
+        "--app-bg": "#e9e3f1",
+        "--bg": "#fdfbff",
+        "--panel": "#f6f1fa",
+        "--fg": "#241d31",
+        "--fg-2": "#554b6a",
+        "--fg-3": "#665c7c",
+        "--border": "#e2daea",
+        "--border-strong": "#cfc3dd",
+        "--hover": "rgba(36, 29, 49, 0.05)",
+        "--hover-strong": "rgba(36, 29, 49, 0.08)",
+        "--active": "rgba(36, 29, 49, 0.07)",
+        "--bubble": "#f8e9ef",
+        "--accent": "#6f5bb5",
+        "--accent-text": "#5b47a8",
+        "--accent-soft": "rgba(111, 91, 181, 0.14)",
+        "--danger": "#a52c47",
+        "--danger-soft": "rgba(165, 44, 71, 0.12)",
+        "--ok": "#1f6f52",
+        "--warn": "#8a5a12",
+        "--warn-soft": "rgba(138, 90, 18, 0.12)",
+        "--code-bg": "#f7f2fb",
+        "--code-head": "#efe8f7",
+        "--seg": "#ffffff"
+      },
+      "dark": {
+        "--app-bg": "#100d16",
+        "--bg": "#191521",
+        "--panel": "#1f1a2a",
+        "--fg": "#f3effa",
+        "--fg-2": "#c3bad6",
+        "--fg-3": "#9a90b3",
+        "--border": "#2b2537",
+        "--border-strong": "#3a3149",
+        "--hover": "rgba(255, 255, 255, 0.05)",
+        "--hover-strong": "rgba(255, 255, 255, 0.085)",
+        "--active": "rgba(255, 255, 255, 0.08)",
+        "--bubble": "#2a2337",
+        "--accent": "#a48fe6",
+        "--accent-text": "#cfc2ff",
+        "--accent-soft": "rgba(164, 143, 230, 0.18)",
+        "--danger": "#ff97a8",
+        "--danger-soft": "rgba(255, 151, 168, 0.14)",
+        "--ok": "#74dfae",
+        "--warn": "#ffc978",
+        "--warn-soft": "rgba(255, 201, 120, 0.16)",
+        "--code-bg": "#151120",
+        "--code-head": "#1b1629",
+        "--seg": "#2b2537"
+      }
     }
   }
 }

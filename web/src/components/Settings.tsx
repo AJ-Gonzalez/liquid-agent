@@ -29,6 +29,7 @@ import { errorToast, toast, useStore } from "../store";
 import type { Part, Settings as SettingsType } from "../types";
 import { DEVICE, IS_MAC, cx } from "../util";
 import { MODES, modeNote } from "./Composer";
+import { PalettePicker } from "./PalettePicker";
 import { Logo } from "./Sidebar";
 import { Modal, Progress, Segmented, StatusDot, Toggle } from "./ui";
 
@@ -137,6 +138,9 @@ function General({ settings }: { settings: SettingsType }) {
             { value: "dark", label: "Dark", icon: <Moon size={13} /> },
           ]}
         />
+      </Row>
+      <Row title="Palette" detail="Each palette comes in a light and a dark version.">
+        <PalettePicker value={settings.palette} onChange={(palette) => patch({ palette })} />
       </Row>
       <Row title="Home folder for files" detail="Where it reads and saves files when you don't give a full path.">
         <SavedInput value={settings.workspace} placeholder="~" onSave={(workspace) => patch({ workspace })} width={200} />

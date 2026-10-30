@@ -10,12 +10,10 @@ import { Spinner } from "./components/ui";
 import { VoiceView } from "./components/VoiceView";
 import { connect, go, useStore } from "./store";
 import { setDesktopTheme } from "./desktop";
-import { BUILTIN, applyPalette, paletteFor, resolveMode, type ThemeSource } from "./theme";
-
-type ThemeSettings = { theme?: ThemeSource; palette?: string };
+import { BUILTIN, applyPalette, paletteFor, resolveMode } from "./theme";
 
 function useTheme() {
-  const settings = useStore((s) => s.settings as ThemeSettings | undefined);
+  const settings = useStore((s) => s.settings);
   const source = settings?.theme ?? "system";
   const palette = settings?.palette ?? BUILTIN;
   useEffect(() => {

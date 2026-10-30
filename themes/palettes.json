@@ -174,6 +174,59 @@
         "--code-head": "#001133",
         "--seg": "#0b2a55"
       }
+    },
+    "romantic": {
+      "name": "Romantic",
+      "light": {
+        "--app-bg": "#f6ebef",
+        "--bg": "#fffbfc",
+        "--panel": "#fcf3f6",
+        "--fg": "#3f2347",
+        "--fg-2": "#63506d",
+        "--fg-3": "#705a7c",
+        "--border": "#f0dfe5",
+        "--border-strong": "#e2c9d3",
+        "--hover": "rgba(63, 35, 71, 0.05)",
+        "--hover-strong": "rgba(63, 35, 71, 0.08)",
+        "--active": "rgba(63, 35, 71, 0.07)",
+        "--bubble": "#fbe6ec",
+        "--accent": "#b8425f",
+        "--accent-text": "#94314c",
+        "--accent-soft": "rgba(184, 66, 95, 0.13)",
+        "--danger": "#ab2338",
+        "--danger-soft": "rgba(171, 35, 56, 0.11)",
+        "--ok": "#2f6b52",
+        "--warn": "#8a5518",
+        "--warn-soft": "rgba(138, 85, 24, 0.12)",
+        "--code-bg": "#fdf3f6",
+        "--code-head": "#fbeaef",
+        "--seg": "#ffffff"
+      },
+      "dark": {
+        "--app-bg": "#170e1d",
+        "--bg": "#1f1426",
+        "--panel": "#271a30",
+        "--fg": "#fbeff3",
+        "--fg-2": "#d3b9c5",
+        "--fg-3": "#ad96a4",
+        "--border": "#3b2844",
+        "--border-strong": "#4d3559",
+        "--hover": "rgba(247, 169, 168, 0.06)",
+        "--hover-strong": "rgba(247, 169, 168, 0.1)",
+        "--active": "rgba(247, 169, 168, 0.09)",
+        "--bubble": "#301c39",
+        "--accent": "#ef798a",
+        "--accent-text": "#f7a9a8",
+        "--accent-soft": "rgba(239, 121, 138, 0.18)",
+        "--danger": "#ff9aa6",
+        "--danger-soft": "rgba(255, 154, 166, 0.14)",
+        "--ok": "#7fd6a9",
+        "--warn": "#ffc48a",
+        "--warn-soft": "rgba(255, 196, 138, 0.16)",
+        "--code-bg": "#1b1122",
+        "--code-head": "#251730",
+        "--seg": "#3b2844"
+      }
     }
   }
 }
